@@ -1,0 +1,12 @@
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\bin\Debug\netcoreapp3.1\DistantPointTest.Service.deps.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\bin\Debug\netcoreapp3.1\DistantPointTest.Service.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\bin\Debug\netcoreapp3.1\DistantPointTest.Service.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\obj\Debug\netcoreapp3.1\DistantPointTest.Service.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\obj\Debug\netcoreapp3.1\DistantPointTest.Service.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\obj\Debug\netcoreapp3.1\DistantPointTest.Service.AssemblyInfo.cs
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\obj\Debug\netcoreapp3.1\DistantPointTest.Service.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\obj\Debug\netcoreapp3.1\DistantPointTest.Service.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\obj\Debug\netcoreapp3.1\DistantPointTest.Service.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Service\obj\Debug\netcoreapp3.1\DistantPointTest.Service.csproj.CopyComplete

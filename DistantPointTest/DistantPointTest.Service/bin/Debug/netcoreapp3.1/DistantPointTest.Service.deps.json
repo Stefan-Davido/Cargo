@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "DistantPointTest.Service/1.0.0": {
+        "dependencies": {
+          "DistantPointTest.Entities": "1.0.0"
+        },
+        "runtime": {
+          "DistantPointTest.Service.dll": {}
+        }
+      },
+      "DistantPointTest.Entities/1.0.0": {
+        "runtime": {
+          "DistantPointTest.Entities.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DistantPointTest.Service/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DistantPointTest.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

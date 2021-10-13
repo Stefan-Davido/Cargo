@@ -1,0 +1,73 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model DistantPointTest.Entities.Package
+
+<div class="row m-5">
+    <h3 class="text-danger font-weight-bolder">@Html.ViewBag.Message</h3>
+    <form method="post"name="order" class="col-12 mt-3">
+        <div>
+            <div class="row">
+                <label asp-for="Width"></label>
+                <input type="text" class="form-control" asp-for="Width" />
+            </div>
+            <div class="row">
+                <label asp-for="Depth"></label>
+                <input type="text" asp-for="Depth" class="form-control"/>
+            </div>
+            <div class="row">
+                <label asp-for="Height"></label>
+                <input asp-for="Height" type="text" class="form-control"/>
+            </div>
+            <div class="row">
+                <label asp-for="Weight"></label>
+                <input type="text" asp-for="Weight" class="form-control"/>
+            </div>
+            <div class="row">
+                <label asp-for="Courier"></label>
+                <select asp-for="Courier" asp-items="@Html.ViewBag.Cargo" class="form-control"></select>
+                <input asp-for="Courier" hidden class="form-control"/>
+            </div>
+        </div>
+        <div class="row">
+            <input id="submitBtn" type="submit" class="btn btn-outline-success mt-4" value="See Price" />
+            <input asp-for="Cost" id="costInput" class="form-control mt-2" disabled="disabled" />
+        </div>
+    </form>
+    <div class="col-12 mt-3">
+        <div class="row"id="modal">
+            <label>Make The Order</label>
+            <a class="btn btn-outline-danger form-control"  data-toggle="modal" data-target="#OrderModal">Order</a>
+        </div>
+    </div>
+</div>
+
+
+<!-- MODAL -->
+<div class="modal fade" id="OrderModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">Are You Sure You Want to Order This Package?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label>Order Cost</label>
+                    <input type="text" disabled asp-for="Cost" class="form-control" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-info" data-dismiss="modal">Close</button>
+                <button id="addNewCategoryBtn" type="button" class="btn btn-success">Order</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="~/js/site.js"></script>
+}
