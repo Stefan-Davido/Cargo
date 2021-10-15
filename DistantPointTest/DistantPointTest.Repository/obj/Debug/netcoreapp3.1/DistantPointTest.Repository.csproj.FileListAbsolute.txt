@@ -1,0 +1,17 @@
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Repository.deps.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Repository.runtimeconfig.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Repository.runtimeconfig.dev.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Repository.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Repository.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Data.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Data.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.AssemblyInfo.cs
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.csproj.CopyComplete
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Repository\obj\Debug\netcoreapp3.1\DistantPointTest.Repository.genruntimeconfig.cache

@@ -1,11 +1,9 @@
 ﻿
 if (document.getElementById("costInput").value !== '') {
     document.getElementById('modal').style.display = 'block';
-    console.log(document.getElementById("costInput").value);
 } else {
     document.getElementById('modal').style.display = 'none';
 }
-
 
 $(function () {
     $("form[name='order']").validate({
@@ -59,3 +57,33 @@ $(function () {
         }
     });
 });
+
+
+// *** AJAX FOR ORDER
+
+function Order() {
+    var data = {
+        Width: $("#Width").val(),
+        Depth: $("#Depth").val(),
+        Height: $("#Height").val(),
+        Weight: $("#Weight").val(),
+        CourierName: $("#CourierName").val(),
+        CourierId: $("#CourierId").val(),
+        Cost: $("#costInput").val(),
+        UserId: $("#UserId").val()
+    };
+
+    $.ajax({
+        type: "POST",
+        url: "/Home/Order",
+        data: { package: data },
+        success: function (data) {
+            $("#OrderModal").modal("toggle");
+            console.log("Work");
+            console.log(data);
+        },
+        error: function () {
+            console.log("Dont Work");
+        }
+    });
+}

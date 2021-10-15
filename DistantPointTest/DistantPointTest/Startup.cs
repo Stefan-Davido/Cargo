@@ -1,4 +1,6 @@
 using DistantPointTest.Data;
+using DistantPointTest.Repository;
+using DistantPointTest.Repository.Interfaces;
 using DistantPointTest.Service;
 using DistantPointTest.Service.Interfaces;
 using Microsoft.AspNetCore.Builder;
@@ -29,18 +31,26 @@ namespace DistantPointTest
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<ApplicationDbContext>(options =>
+            services.AddDbContext<DataContext>(options =>
                 options.UseSqlServer(
-                    Configuration.GetConnectionString("DefaultConnection")));
+                    Configuration.GetConnectionString("CargoConnection")));
             services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
-                .AddEntityFrameworkStores<ApplicationDbContext>();
+                    .AddRoles<IdentityRole>()
+                    .AddEntityFrameworkStores<DataContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
 
+            // *** Services
+            services.AddTransient<IEmailService, EmailService>();
+            services.AddTransient<IPackageService, PackageService>();
+            services.AddTransient<ICourierService, CourierService>();
+            services.AddTransient<IPricePerCourierService, PricePerCourierService>();
+            services.AddTransient<ICargo, Cargo>();
 
-            services.AddTransient<ICargo4You, Cargo4You>();
-            services.AddTransient<IShipFaster, ShipFaster>();
-            services.AddTransient<IMaltaShip, MaltaShip>();
+            // *** Repositories
+            services.AddTransient<IPackageRepository, PackageRepository>();
+            services.AddTransient<ICourierRespository, CourierRespositor>();
+            services.AddTransient<IPricePerCourierRepository, PricerPerCourierRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

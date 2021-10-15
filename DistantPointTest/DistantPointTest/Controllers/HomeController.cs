@@ -1,6 +1,8 @@
 ﻿using DistantPointTest.Entities;
 using DistantPointTest.Models;
+using DistantPointTest.Service;
 using DistantPointTest.Service.Interfaces;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
@@ -15,20 +17,32 @@ namespace DistantPointTest.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ICargo4You _cargo4You;
-        private readonly IShipFaster _shipFaster;
-        private readonly IMaltaShip _maltaShip;
+        private readonly UserManager<IdentityUser> _userManager;
+        private readonly SignInManager<IdentityUser> _signInManager;
+        private readonly ICourierService _courierService;
+        private readonly IPackageService _packageService;
+        private readonly ICargo _cargo;
+        private readonly IPricePerCourierService _pricePerCourierService;
+        private readonly IEmailService _emailService;
 
         public HomeController(
             ILogger<HomeController> logger,
-            ICargo4You cargo4You,
-            IShipFaster shipFaster,
-            IMaltaShip maltaShip)
+            IPackageService packageService,
+            ICourierService courierService,
+            ICargo cargo,
+            IPricePerCourierService pricePerCourierService,
+            IEmailService emailService,
+            UserManager<IdentityUser> userManager,
+            SignInManager<IdentityUser> signInManager)
         {
             _logger = logger;
-            _cargo4You = cargo4You;
-            _shipFaster = shipFaster;
-            _maltaShip = maltaShip;
+            _courierService = courierService;
+            _packageService = packageService;
+            _cargo = cargo;
+            _pricePerCourierService = pricePerCourierService;
+            _userManager = userManager;
+            _signInManager = signInManager;
+            _emailService = emailService;
         }
 
         [HttpGet]
@@ -45,88 +59,53 @@ namespace DistantPointTest.Controllers
             var dropDown = DropDown();
             ViewBag.Cargo = dropDown;
 
-            if(package.Courier.ToLower() == "cargo4you")
+            var courier = _courierService.GetCourierById(package.CourierId);
+            var pricer = _pricePerCourierService.GetPricerByCourierId(package.CourierId);
+            var check = _cargo.Validation(courier, package); 
+            if(check == false)
             {
-                var check = _cargo4You.ValidationCheck(package.Weight, package.cubicCM);
-                if(check == false)
+                ViewBag.Message = "This Courier Doesn't allow this size package";
+                return View();
+            }
+            else
+            {
+                var pricePerWeight = _cargo.PricePerWeight(package, pricer);
+                var pricePerDimension = _cargo.PricePerDimension(package, pricer);
+
+                if(pricePerWeight >= pricePerDimension)
                 {
-                    
-                    ViewBag.Message = "This Courier Doesn't allow this size package";
-                }              
+                    package.Cost = pricePerWeight;
+                }
                 else
                 {
-                    ViewBag.Cargo = dropDown;
-                    ViewBag.Message = "Successfull";
-                    var priceByDimensions = _cargo4You.BasedOnDimensions(package);
-                    var priceByWeight = _cargo4You.BasedOnWeight(package);
-
-                    if(priceByDimensions >= priceByWeight)
-                    {
-                        package.Cost = priceByDimensions;
-                    }
-                    else
-                    {
-                        package.Cost = priceByWeight;
-                    }
-
-                    return View(package);
+                    package.Cost = pricePerDimension;
                 }
+
+                return View(package);
             }
-            if (package.Courier.ToLower() == "maltaship")
-            {
-                var check = _maltaShip.ValidationCheck(package.Weight, package.cubicCM);
-                if(check == false)
-                {
-                    ViewBag.Message = "This Courier Doesn't allow this size package";
-                }              
-                else
-                {
-                    ViewBag.Cargo = dropDown;
-                    ViewBag.Message = "Successfull";
-                    var priceByDimensions = _maltaShip.BasedOnDimensions(package);
-                    var priceByWeight = _maltaShip.BasedOnWeight(package);
-
-                    if(priceByDimensions >= priceByWeight)
-                    {
-                        package.Cost = priceByDimensions;
-                    }
-                    else
-                    {
-                        package.Cost = priceByWeight;
-                    }
-
-                    return View(package);
-                }
-            }
-            if(package.Courier.ToLower() == "shipfaster")
-            {
-                var check = _shipFaster.ValidationCheck(package.Weight, package.cubicCM);
-                if(check == false)
-                {
-                    ViewBag.Message = "This Courier Doesn't allow this size package";
-                }              
-                else
-                {
-                    ViewBag.Cargo = dropDown;
-                    ViewBag.Message = "Successfull";
-                    var priceByDimensions = _shipFaster.BasedOnDimensions(package);
-                    var priceByWeight = _shipFaster.BasedOnWeight(package);
-
-                    if(priceByDimensions >= priceByWeight)
-                    {
-                        package.Cost = priceByDimensions;
-                    }
-                    else
-                    {
-                        package.Cost = priceByWeight;
-                    }
-
-                    return View(package);
-                }
-            }
-            return View();
         }
 
+        private async Task<string> GetEmail()
+        {
+            var user = await _userManager.GetUserAsync(User);
+            var email = user.Email;
+
+            return email;
+        }
+
+        [HttpPost]
+        public async void Order(Package package)
+        {
+            var courier = _courierService.GetCourierById(package.CourierId);
+            package.CourierName = courier.CourierName;
+            courier.OrdersMade += 1;
+
+            _courierService.EditCourier(courier);
+            _packageService.AddPackage(package);
+
+            var email = await GetEmail();
+            _emailService.SendEmail(email);
+        }
 
         public IActionResult Privacy()
         {
@@ -141,6 +120,7 @@ namespace DistantPointTest.Controllers
 
         private List<SelectListItem> DropDown()
         {
+            var Couriers = _courierService.GetAllCouriers();
             List<SelectListItem> selectList = new List<SelectListItem>
             {
                 new SelectListItem
@@ -149,19 +129,13 @@ namespace DistantPointTest.Controllers
                     Value = "No Selected"
                 }
             };
-            List<string> cargoList = new List<string>();
-            cargoList.Add("Cargo4You");
-            cargoList.Add("ShipFaster");
-            cargoList.Add("MaltaShip");
 
-            foreach(var cargo in cargoList)
+            if(Couriers.Count() > 0)
             {
-                selectList.Add(new SelectListItem
-                    {
-                        Text = cargo,
-                        Value = cargo
-                    }
-                );
+                foreach (var courier in Couriers)
+                {
+                    selectList.Add(new SelectListItem { Value = courier.CourierId.ToString(), Text = courier.CourierName });
+                }
             }
 
             return selectList;

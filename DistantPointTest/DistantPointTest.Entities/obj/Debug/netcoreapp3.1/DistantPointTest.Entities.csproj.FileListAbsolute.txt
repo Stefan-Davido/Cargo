@@ -1,4 +1,6 @@
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.deps.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.runtimeconfig.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.runtimeconfig.dev.json
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.dll
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.pdb
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\obj\Debug\netcoreapp3.1\DistantPointTest.Entities.AssemblyInfoInputs.cache
@@ -6,4 +8,5 @@ C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\obj\Debug\
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\obj\Debug\netcoreapp3.1\DistantPointTest.Entities.csproj.CoreCompileInputs.cache
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\obj\Debug\netcoreapp3.1\DistantPointTest.Entities.dll
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\obj\Debug\netcoreapp3.1\DistantPointTest.Entities.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\obj\Debug\netcoreapp3.1\DistantPointTest.Entities.genruntimeconfig.cache
 C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Entities\obj\Debug\netcoreapp3.1\DistantPointTest.Entities.csprojAssemblyReference.cache

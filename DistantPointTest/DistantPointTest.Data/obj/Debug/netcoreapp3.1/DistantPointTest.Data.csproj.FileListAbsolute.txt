@@ -1,0 +1,15 @@
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\bin\Debug\netcoreapp3.1\DistantPointTest.Data.deps.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\bin\Debug\netcoreapp3.1\DistantPointTest.Data.runtimeconfig.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\bin\Debug\netcoreapp3.1\DistantPointTest.Data.runtimeconfig.dev.json
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\bin\Debug\netcoreapp3.1\DistantPointTest.Data.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\bin\Debug\netcoreapp3.1\DistantPointTest.Data.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\bin\Debug\netcoreapp3.1\DistantPointTest.Entities.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.csprojAssemblyReference.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.AssemblyInfoInputs.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.AssemblyInfo.cs
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.csproj.CoreCompileInputs.cache
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.csproj.CopyComplete
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.dll
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.pdb
+C:\Users\Dell\source\repos\DistantPointTest\DistantPointTest.Data\obj\Debug\netcoreapp3.1\DistantPointTest.Data.genruntimeconfig.cache
